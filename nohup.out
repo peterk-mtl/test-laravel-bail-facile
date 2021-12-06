@@ -1,0 +1,131 @@
+Starting Laravel development server: http://127.0.0.1:8000
+[Thu Dec  2 10:44:33 2021] Failed to listen on 127.0.0.1:8000 (reason: Permission denied)
+Starting Laravel development server: http://127.0.0.1:8001
+[Thu Dec  2 10:44:34 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+[Thu Dec  2 10:44:38 2021] 127.0.0.1:53710 Accepted
+[Thu Dec  2 10:44:38 2021] 127.0.0.1:53711 Accepted
+[Thu Dec  2 10:44:38 2021] 127.0.0.1:53710 Closing
+[Thu Dec  2 10:44:38 2021] 127.0.0.1:53711 [200]: GET /favicon.ico
+[Thu Dec  2 10:44:38 2021] 127.0.0.1:53711 Closing
+[Thu Dec  2 10:44:39 2021] 127.0.0.1:53713 Accepted
+[Thu Dec  2 10:44:39 2021] 127.0.0.1:53714 Accepted
+[Thu Dec  2 10:44:39 2021] 127.0.0.1:53713 Closing
+[Thu Dec  2 10:44:39 2021] 127.0.0.1:53714 [200]: GET /favicon.ico
+[Thu Dec  2 10:44:39 2021] 127.0.0.1:53714 Closing
+[Thu Dec  2 10:44:45 2021] 127.0.0.1:55680 Accepted
+[Thu Dec  2 10:44:45 2021] 127.0.0.1:55681 Accepted
+[Thu Dec  2 10:44:45 2021] 127.0.0.1:55680 Closing
+[Thu Dec  2 10:44:45 2021] 127.0.0.1:55681 [200]: GET /favicon.ico
+[Thu Dec  2 10:44:45 2021] 127.0.0.1:55681 Closing
+[Thu Dec  2 10:44:46 2021] 127.0.0.1:55682 Accepted
+[Thu Dec  2 10:44:46 2021] 127.0.0.1:55683 Accepted
+[Thu Dec  2 10:44:46 2021] 127.0.0.1:55682 Closing
+[Thu Dec  2 10:44:46 2021] 127.0.0.1:55683 [200]: GET /favicon.ico
+[Thu Dec  2 10:44:46 2021] 127.0.0.1:55683 Closing
+[Thu Dec  2 11:09:09 2021] 127.0.0.1:61320 Accepted
+[Thu Dec  2 11:09:09 2021] 127.0.0.1:61321 Accepted
+[Thu Dec  2 11:09:09 2021] 127.0.0.1:61320 Closing
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61321 [200]: GET /favicon.ico
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61321 Closing
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61330 Accepted
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61331 Accepted
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61330 Closing
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61331 [200]: GET /favicon.ico
+[Thu Dec  2 11:09:10 2021] 127.0.0.1:61331 Closing
+[Thu Dec  2 12:16:36 2021] 127.0.0.1:64902 Accepted
+[Thu Dec  2 12:16:36 2021] 127.0.0.1:64903 Accepted
+[Thu Dec  2 12:16:36 2021] 127.0.0.1:64903 Closing
+[Thu Dec  2 12:16:36 2021] 127.0.0.1:64902 [200]: GET /favicon.ico
+[Thu Dec  2 12:16:36 2021] 127.0.0.1:64902 Closing
+Environment modified. Restarting server...
+[Thu Dec  2 12:38:13 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+Environment modified. Restarting server...
+[Thu Dec  2 14:01:08 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+Environment modified. Restarting server...
+[Thu Dec  2 14:21:18 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+Environment modified. Restarting server...
+[Thu Dec  2 14:34:38 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+Environment modified. Restarting server...
+[Thu Dec  2 14:34:39 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8001) started
+[Fri Dec  3 13:14:54 2021] 127.0.0.1:50010 Accepted
+[Fri Dec  3 13:14:54 2021] 127.0.0.1:50011 Accepted
+[Fri Dec  3 13:14:56 2021] 127.0.0.1:50011 Closing
+[Fri Dec  3 13:14:56 2021] 127.0.0.1:50012 Accepted
+[Fri Dec  3 13:14:56 2021] 127.0.0.1:50010 Closing
+[Fri Dec  3 13:14:57 2021] 127.0.0.1:50012 [200]: GET /favicon.ico
+[Fri Dec  3 13:14:57 2021] 127.0.0.1:50012 Closing
+[Fri Dec  3 13:15:00 2021] 127.0.0.1:50014 Accepted
+[Fri Dec  3 13:15:00 2021] 127.0.0.1:50015 Accepted
+[Fri Dec  3 13:15:01 2021] 127.0.0.1:50014 Closing
+[Fri Dec  3 13:15:01 2021] 127.0.0.1:50015 [200]: GET /favicon.ico
+[Fri Dec  3 13:15:01 2021] 127.0.0.1:50015 Closing
+[Fri Dec  3 13:15:31 2021] 127.0.0.1:50018 Accepted
+[Fri Dec  3 13:15:31 2021] 127.0.0.1:50019 Accepted
+[Fri Dec  3 13:15:33 2021] 127.0.0.1:50018 Closing
+[Fri Dec  3 13:15:34 2021] 127.0.0.1:50020 Accepted
+[Fri Dec  3 13:15:34 2021] 127.0.0.1:50019 Closing
+[Fri Dec  3 13:15:34 2021] 127.0.0.1:50020 [200]: GET /favicon.ico
+[Fri Dec  3 13:15:34 2021] 127.0.0.1:50020 Closing
+[Fri Dec  3 13:15:35 2021] 127.0.0.1:50021 Accepted
+[Fri Dec  3 13:15:35 2021] 127.0.0.1:50022 Accepted
+[Fri Dec  3 13:15:35 2021] 127.0.0.1:50022 Closing
+[Fri Dec  3 13:15:35 2021] 127.0.0.1:50021 [200]: GET /favicon.ico
+[Fri Dec  3 13:15:35 2021] 127.0.0.1:50021 Closing
+[Fri Dec  3 13:17:10 2021] 127.0.0.1:50041 Accepted
+[Fri Dec  3 13:17:10 2021] 127.0.0.1:50042 Accepted
+[Fri Dec  3 13:17:10 2021] 127.0.0.1:50041 Closing
+[Fri Dec  3 13:17:11 2021] 127.0.0.1:50042 [200]: GET /favicon.ico
+[Fri Dec  3 13:17:11 2021] 127.0.0.1:50042 Closing
+[Fri Dec  3 13:17:11 2021] 127.0.0.1:50043 Accepted
+[Fri Dec  3 13:17:11 2021] 127.0.0.1:50044 Accepted
+[Fri Dec  3 13:17:11 2021] 127.0.0.1:50043 Closing
+[Fri Dec  3 13:17:12 2021] 127.0.0.1:50044 [200]: GET /favicon.ico
+[Fri Dec  3 13:17:12 2021] 127.0.0.1:50044 Closing
+[Fri Dec  3 13:18:46 2021] 127.0.0.1:50051 Accepted
+[Fri Dec  3 13:18:46 2021] 127.0.0.1:50052 Accepted
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50052 Closing
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50051 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50051 Closing
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50058 Accepted
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50058 [200]: GET /favicon.ico
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50058 Closing
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50059 Accepted
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50060 Accepted
+[Fri Dec  3 13:18:47 2021] 127.0.0.1:50060 Closing
+[Fri Dec  3 13:18:48 2021] 127.0.0.1:50059 [200]: GET /favicon.ico
+[Fri Dec  3 13:18:48 2021] 127.0.0.1:50059 Closing
+[Fri Dec  3 13:18:50 2021] 127.0.0.1:50061 Accepted
+[Fri Dec  3 13:18:50 2021] 127.0.0.1:50062 Accepted
+[Fri Dec  3 13:18:51 2021] 127.0.0.1:50062 Closing
+[Fri Dec  3 13:18:51 2021] 127.0.0.1:50061 [200]: GET /favicon.ico
+[Fri Dec  3 13:18:51 2021] 127.0.0.1:50061 Closing
+[Fri Dec  3 13:19:03 2021] 127.0.0.1:50064 Accepted
+[Fri Dec  3 13:19:03 2021] 127.0.0.1:50065 Accepted
+[Fri Dec  3 13:19:03 2021] 127.0.0.1:50065 Closing
+[Fri Dec  3 13:19:04 2021] 127.0.0.1:50064 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:04 2021] 127.0.0.1:50064 Closing
+[Fri Dec  3 13:19:09 2021] 127.0.0.1:50066 Accepted
+[Fri Dec  3 13:19:09 2021] 127.0.0.1:50067 Accepted
+[Fri Dec  3 13:19:09 2021] 127.0.0.1:50066 Closing
+[Fri Dec  3 13:19:09 2021] 127.0.0.1:50067 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:09 2021] 127.0.0.1:50067 Closing
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50068 Accepted
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50069 Accepted
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50068 Closing
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50069 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50069 Closing
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50070 Accepted
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50071 Accepted
+[Fri Dec  3 13:19:10 2021] 127.0.0.1:50070 Closing
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50071 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50071 Closing
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50072 Accepted
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50073 Accepted
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50072 Closing
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50073 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50073 Closing
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50074 Accepted
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50075 Accepted
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50074 Closing
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50075 [200]: GET /favicon.ico
+[Fri Dec  3 13:19:11 2021] 127.0.0.1:50075 Closing
