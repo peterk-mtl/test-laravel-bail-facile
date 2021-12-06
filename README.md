@@ -5,11 +5,11 @@
 > ***Préambule :*** J'ai du réaliser ce projet sous le pc Windows brouette avec lequel nous avions parlé sur meets. 
 J'ai donc du faire quelques concessions. Par exemple, je n'ai pas pu utiliser docker et j'ai du virtualiser Ubuntu sur Winwows et faire tourner le project en local, pas idéal...
 
-####  1)  Installer php en local avec  ses extensions, mysql (ou faire tourner avec docker) ainsi que composer
-#### 2) Récupérer les sources sur git
+###  1)  Installer php en local avec  ses extensions, mysql (ou faire tourner avec docker) ainsi que composer
+### 2) Récupérer les sources sur git
 
     git clone https://github.com/peterk-mtl/test-laravel-bail-facile.git .
-#### 3) Créer des fichiers d'environnement
+### 3) Créer des fichiers d'environnement
 Copier le .env.exemple vers .env
 
     cp .env.exemple .env
@@ -71,7 +71,7 @@ Le remplir avec les valeurs suivantes :
 
     L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api"
 
-#### 4) Makefile
+### 4) Makefile
 
 Afin de faciliter l'installation en local, j'ai créé un fichier Makefile pour la simplifier.
 
@@ -125,16 +125,22 @@ Enfin, le serveur de développement Laravel se déploiera et le site sera access
     Starting Laravel development server: http://127.0.0.1:8000
     [Mon Dec  6 22:23:45 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8000) started
 
-#### 5) Configurer les tests
+### 5) Configurer les tests
 
 Pour les tests, j'utilise sqlite. Il faut créer un fichier .env.testing contenant les informations suivantes :
 
     DB_CONNECTION=sqlite
     CACHE_DRIVER=array
 
-#### 6) Lancer les tests
+### 6) Lancer les tests
 
 Lancer les commandes suivantes :
 
-    php artisan config:clear
-    php artisan migrate:
+    php artisan config:cache --env=testing
+    php artisan migrate --database=sqlite
+    php artisan test --testsuite=Feature --stop-on-failure
+
+## A propos des choix techniques
+
+- J'ai créé trois modèles
+
