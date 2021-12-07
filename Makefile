@@ -1,4 +1,4 @@
-.PHONY: create-database install run-migrations database-setup run-seeders start-server
+.PHONY: create-database install run-migrations database-setup run-seeders start-server run-tests
 
 vendors: composer.json
 	composer install
@@ -22,5 +22,10 @@ database-setup: run-migrations run-seeders
 
 start-server: #start server
 	php artisan serve
+
+run-tests: #run tests
+	php artisan config:cache --env=testing
+    php artisan migrate --database=sqlite
+    php artisan test --testsuite=Feature --stop-on-failure
 
 install:  vendors create-database database-setup start-server

@@ -10,9 +10,9 @@ J'ai donc du faire quelques concessions. Par exemple, je n'ai pas pu utiliser do
 
     git clone https://github.com/peterk-mtl/test-laravel-bail-facile.git .
 ### 3) Créer des fichiers d'environnement
-Copier le .env.exemple vers .env
+Copier le .env.example vers .env
 
-    cp .env.exemple .env
+    cp .env.example .env
 
 Le remplir avec les valeurs suivantes :
 
@@ -30,9 +30,8 @@ Le remplir avec les valeurs suivantes :
     DB_HOST=127.0.0.1
     DB_PORT=3306
     DB_DATABASE=test_laravel_pk
-    DB_USERNAME=peter
-    DB_PASSWORD=863186Aa!
-
+    DB_USERNAME=my_username
+    DB_PASSWORD=my_password
     BROADCAST_DRIVER=log
     CACHE_DRIVER=file
     FILESYSTEM_DRIVER=local
@@ -69,7 +68,7 @@ Le remplir avec les valeurs suivantes :
     MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
     MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-    L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api"
+    L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api/env"
 
 ### 4) Makefile
 
@@ -129,6 +128,7 @@ Enfin, le serveur de développement Laravel se déploiera et le site sera access
 
 Pour les tests, j'utilise sqlite. Il faut créer un fichier .env.testing contenant les informations suivantes :
 
+    APP_ENV=local
     DB_CONNECTION=sqlite
     CACHE_DRIVER=array
 
