@@ -1,9 +1,6 @@
 # Projet bail facile
 
-## Installation
-
-> ***Préambule :*** J'ai du réaliser ce projet sous le pc Windows brouette avec lequel nous avions parlé sur meets. 
-J'ai donc du faire quelques concessions. Par exemple, je n'ai pas pu utiliser docker et j'ai du virtualiser Ubuntu sur Winwows et faire tourner le project en local, pas idéal...
+## I) Installation
 
 ###  1)  Installer php en local avec  ses extensions, mysql (ou faire tourner avec docker) ainsi que composer
 ### 2) Récupérer les sources sur git
@@ -68,7 +65,7 @@ Le remplir avec les valeurs suivantes :
     MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
     MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-    L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api/env"
+    L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api/"
 
 ### 4) Makefile
 
@@ -124,23 +121,40 @@ Enfin, le serveur de développement Laravel se déploiera et le site sera access
     Starting Laravel development server: http://127.0.0.1:8000
     [Mon Dec  6 22:23:45 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8000) started
 
-### 5) Configurer les tests
+## II) Configurer et lancer les tests
 
-Pour les tests, j'utilise sqlite. Il faut créer un fichier .env.testing contenant les informations suivantes :
+Pour les tests, j'utilise sqlite.
 
-    APP_ENV=local
-    DB_CONNECTION=sqlite
-    CACHE_DRIVER=array
+Utiliser la commande suivante :
 
-### 6) Lancer les tests
+    make run-tests
 
-Lancer les commandes suivantes :
+La commande vérifie que la base sqlite existe dans `./database` et la crée si elle n'existe pas. Elle configure ensuite la configuration pour l'environnement de test, exécute les migrations et lance finalement les tests.
+La configuration est ensuite repassée au mode "local"
 
-    php artisan config:cache --env=testing
-    php artisan migrate --database=sqlite
-    php artisan test --testsuite=Feature --stop-on-failure
+## III) Tester l'api
 
-## A propos des choix techniques
+Pour tester l'api, j'ai choisi d'utiliser Swagger. Toutes les routes sont testables ici : [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation)
+Cela permet de ne pas avoir à utiliser Postman ou un autre outil pour les appels d'API et de connaitre les différents paramètres utilisables.
 
-- J'ai créé trois modèles
+## IV) Explication des choix techniques
 
+### 1) Models
+
+J'ai séparé les documents en 3 modèles. DocumentFormat, DocumentType et Document. En effet, le fait qu'un document soit e-signable ou postable semble beaucoup plus dépendre du format (lettre ou contrat) que du type.
+Dans le cadre de l'API, les paramètres slug à passer sont donc ceux du type_slug liés au DocumentType.
+
+### 2) Bonus
+
+En ce qui concerne la section "Bonus", je me suis contenté de faire la partie concernant le template des types de documents. J'y ai injecté du faux HTML.
+Tous les templates se trouvent dans `resources/views/documentTypesTemplates`.
+Tu pourras voir dans les résultats de l'api un champ `template` qui contient l'url du template associé au document.
+
+### 3) Mise en cache
+
+Etant dans le cadre d'un test et dans un environnement local, je me suis contenté du driver de cache en db afin de ne pas avoir à installer Redis. Mais cela donne une bonne idée de ce que l'on pourrait faire.
+
+### 4) Packages utilisés
+- cviebrock/eloquent-sluggable : Permet de créer des slugs automatiquement pour les modèles
+- l5-swagger : Permet de créer la documentation de l'api
+- stechstudio/laravel-php-cs-fixer : Met le code en forme automatiquement selon les normes PSR, etc

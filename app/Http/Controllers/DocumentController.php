@@ -63,13 +63,12 @@ class DocumentController extends Controller
      *          @OA\MediaType(
      *              mediaType="application/json",
      *          )
-     *       ),
-     *     ),
+     *      ),
      *      @OA\Response(
      *          response=422,
      *          description="Wrong arguments",
      *      ),
-     *
+     * ),
      */
     public function index(IndexDocumentRequest $indexDocumentRequest, DocumentManager $documentManager): DocumentCollection
     {
@@ -99,13 +98,12 @@ class DocumentController extends Controller
      *          @OA\MediaType(
      *              mediaType="application/json",
      *          )
-     *       ),
-     *     ),
+     *      ),
      *      @OA\Response(
      *          response=400,
      *          description="Wrong parameters",
      *      ),
-     *
+     * ),
      */
     public function store(StoreDocumentRequest $storeDocumentRequest): DocumentResource
     {
@@ -142,13 +140,12 @@ class DocumentController extends Controller
      *          @OA\MediaType(
      *              mediaType="application/json",
      *          )
-     *       ),
-     *     ),
+     *      ),
      *      @OA\Response(
      *          response=404,
      *          description="User does not exist",
      *      ),
-     *
+     * ),
      */
     public function show(Document $document): DocumentResource
     {
@@ -156,12 +153,37 @@ class DocumentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     * Only for esignable document formats
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @OA\Put(
+     *      path="/documents/{id}",
+     *      operationId="updateDocument",
+     *      tags={"Documents"},
+     *      summary="E-sign a document",
+     *      description="E-sign a document",
+     *      @OA\Parameter(
+     *          name="id",
+     *          description="Document id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          )
+     *     ),
+     *     @OA\Response(
+     *          response=400,
+     *          description="Document is not e-sinable or already signed",
+     *     ),
+     *     @OA\Response(
+     *          response=404,
+     *          description="Document does not exist",
+     *     ),
+     * ),
      */
     public function update(Request $request, int $documentId)
     {
@@ -207,12 +229,12 @@ class DocumentController extends Controller
      *          @OA\MediaType(
      *              mediaType="application/json",
      *          )
-     *       ),
+     *      ),
      *      @OA\Response(
      *          response=404,
      *          description="Resource Not Found"
      *      )
-     * )
+     * ),
      */
     public function destroy(Document $document): DocumentResource
     {

@@ -24,8 +24,10 @@ start-server: #start server
 	php artisan serve
 
 run-tests: #run tests
+	touch ./database/database.sqlite || exit
 	php artisan config:cache --env=testing
-    php artisan migrate --database=sqlite
-    php artisan test --testsuite=Feature --stop-on-failure
+	php artisan migrate --database=sqlite
+	php artisan test --testsuite=Feature --stop-on-failure
+	php artisan config:cache --env=local
 
 install:  vendors create-database database-setup start-server

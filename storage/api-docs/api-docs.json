@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "http://127.0.0.1:8001/api",
+            "url": "http://127.0.0.1:8001/api/",
             "description": "Demo API Server"
         }
     ],
@@ -64,6 +64,9 @@
                         "content": {
                             "application/json": {}
                         }
+                    },
+                    "422": {
+                        "description": "Wrong arguments"
                     }
                 }
             },
@@ -104,6 +107,9 @@
                         "content": {
                             "application/json": {}
                         }
+                    },
+                    "400": {
+                        "description": "Wrong parameters"
                     }
                 }
             }
@@ -133,6 +139,42 @@
                         "content": {
                             "application/json": {}
                         }
+                    },
+                    "404": {
+                        "description": "User does not exist"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Documents"
+                ],
+                "summary": "E-sign a document",
+                "description": "E-sign a document",
+                "operationId": "updateDocument",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Document id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Document is not e-sinable or already signed"
+                    },
+                    "404": {
+                        "description": "Document does not exist"
                     }
                 }
             },
@@ -165,19 +207,6 @@
                         "description": "Resource Not Found"
                     }
                 }
-            }
-        }
-    },
-    "components": {
-        "responses": {
-            "422": {
-                "description": "Wrong arguments"
-            },
-            "400": {
-                "description": "Wrong parameters"
-            },
-            "404": {
-                "description": "User does not exist"
             }
         }
     },
