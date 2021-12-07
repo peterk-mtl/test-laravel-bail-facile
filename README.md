@@ -11,7 +11,7 @@ Copier le .env.example vers .env
 
     cp .env.example .env
 
-Le remplir avec les valeurs suivantes :
+Le remplir avec les valeurs suivantes et ne pas oublier de remplacer DB_USERNAME et DB_PASSWORD :
 
     APP_NAME=Laravel
     APP_ENV=local
@@ -74,6 +74,7 @@ Afin de faciliter l'installation en local, j'ai créé un fichier Makefile pour 
 Il faut lancer la commande suivante : 
     
     make install
+
 La commande va lancer un `composer install`, puis créer la base de données. Elle demandera d'entrer l'utilisateur et le mot de passe :
 
     The following steps will create the database:
@@ -123,9 +124,13 @@ Enfin, le serveur de développement Laravel se déploiera et le site sera access
 
 ## II) Configurer et lancer les tests
 
-Pour les tests, j'utilise sqlite.
+Pour les tests, j'utilise sqlite. Il faut également créer un fichier .env.testing contenant les valeurs suivantes :
 
-Utiliser la commande suivante :
+    APP_ENV=local
+    DB_CONNECTION=sqlite
+    CACHE_DRIVER=array
+
+Puis utiliser cette commande :
 
     make run-tests
 
