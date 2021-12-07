@@ -25,6 +25,7 @@ start-server: #start server
 
 run-tests: #run tests
 	touch ./database/database.sqlite || exit
+	php artisan l5-swagger:generate
 	php artisan config:cache --env=testing
 	php artisan migrate --database=sqlite
 	php artisan test --testsuite=Feature --stop-on-failure
