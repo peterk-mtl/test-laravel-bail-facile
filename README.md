@@ -1,66 +1,160 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Projet bail facile
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## I) Installation
 
-## About Laravel
+###  1)  Installer php en local avec  ses extensions, mysql (ou faire tourner avec docker) ainsi que composer
+### 2) Récupérer les sources sur git
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    git clone https://github.com/peterk-mtl/test-laravel-bail-facile.git .
+### 3) Créer des fichiers d'environnement
+Copier le .env.example vers .env
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    cp .env.example .env
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Le remplir avec les valeurs suivantes :
 
-## Learning Laravel
+    APP_NAME=Laravel
+    APP_ENV=local
+    APP_KEY=base64:vrekm+GQqO2q0VZ2cAdy2jxfaEDBiwyQ+vEYBcdiloM=
+    APP_DEBUG=true
+    APP_URL=http://localhost
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    LOG_CHANNEL=stack
+    LOG_DEPRECATIONS_CHANNEL=null
+    LOG_LEVEL=debug
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=test_laravel_pk
+    DB_USERNAME=my_username
+    DB_PASSWORD=my_password
+    BROADCAST_DRIVER=log
+    CACHE_DRIVER=file
+    FILESYSTEM_DRIVER=local
+    QUEUE_CONNECTION=sync
+    SESSION_DRIVER=file
+    SESSION_LIFETIME=120
 
-## Laravel Sponsors
+    MEMCACHED_HOST=127.0.0.1
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    REDIS_HOST=127.0.0.1
+    REDIS_PASSWORD=null
+    REDIS_PORT=6379
 
-### Premium Partners
+    MAIL_MAILER=smtp
+    MAIL_HOST=mailhog
+    MAIL_PORT=1025
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS=null
+    MAIL_FROM_NAME="${APP_NAME}"
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
+    AWS_DEFAULT_REGION=us-east-1
+    AWS_BUCKET=
+    AWS_USE_PATH_STYLE_ENDPOINT=false
 
-## Contributing
+    PUSHER_APP_ID=
+    PUSHER_APP_KEY=
+    PUSHER_APP_SECRET=
+    PUSHER_APP_CLUSTER=mt1
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+    MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-## Code of Conduct
+    L5_SWAGGER_CONST_HOST="http://127.0.0.1:8000/api/"
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4) Makefile
 
-## Security Vulnerabilities
+Afin de faciliter l'installation en local, j'ai créé un fichier Makefile pour la simplifier.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Il faut lancer la commande suivante : 
+    
+    make install
+La commande va lancer un `composer install`, puis créer la base de données. Elle demandera d'entrer l'utilisateur et le mot de passe :
 
-## License
+    The following steps will create the database:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    Enter your mysql user: peter
+    Enter password:
+    Database sucessfully created!
+
+Les migrations, seeders et factories sont ensuite lancées :
+
+    The following steps will run migrations:
+
+    php artisan migrate
+    Migration table created successfully.
+    Migrating: 2014_10_12_000000_create_users_table
+    Migrated:  2014_10_12_000000_create_users_table (408.75ms)
+    Migrating: 2019_08_19_000000_create_failed_jobs_table
+    Migrated:  2019_08_19_000000_create_failed_jobs_table (416.37ms)
+    Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+    Migrated:  2019_12_14_000001_create_personal_access_tokens_table (669.18ms)
+    Migrating: 2021_12_02_095210_create_document_formats_table
+    Migrated:  2021_12_02_095210_create_document_formats_table (250.62ms)
+    Migrating: 2021_12_02_095310_create_document_types_table
+    Migrated:  2021_12_02_095310_create_document_types_table (1,211.24ms)
+    Migrating: 2021_12_02_100047_create_documents_table
+    Migrated:  2021_12_02_100047_create_documents_table (1,518.57ms)
+    Migrating: 2021_12_06_110518_create_cache_table
+    Migrated:  2021_12_06_110518_create_cache_table (1,334.00ms)
+
+
+    The following steps will run seeders:
+
+    php artisan db:seed
+    Seeding: Database\Seeders\DocumentFormatSeeder
+    Seeded:  Database\Seeders\DocumentFormatSeeder (181.90ms)
+    Seeding: Database\Seeders\DocumentTypeSeeder
+    Seeded:  Database\Seeders\DocumentTypeSeeder (620.56ms)
+    Seeding: Database\Seeders\DocumentSeeder
+    Seeded:  Database\Seeders\DocumentSeeder (1,957.38ms)
+    Database seeding completed successfully.
+
+Enfin, le serveur de développement Laravel se déploiera et le site sera accessible à l'adresse  [http://127.0.0.1:8000](http://127.0.0.1:8000) :
+
+    php artisan serve
+    Starting Laravel development server: http://127.0.0.1:8000
+    [Mon Dec  6 22:23:45 2021] PHP 8.0.13 Development Server (http://127.0.0.1:8000) started
+
+## II) Configurer et lancer les tests
+
+Pour les tests, j'utilise sqlite.
+
+Utiliser la commande suivante :
+
+    make run-tests
+
+La commande vérifie que la base sqlite existe dans `./database` et la crée si elle n'existe pas. Elle configure ensuite la configuration pour l'environnement de test, exécute les migrations et lance finalement les tests.
+La configuration est ensuite repassée au mode "local"
+
+## III) Tester l'api
+
+Pour tester l'api, j'ai choisi d'utiliser Swagger. Toutes les routes sont testables ici : [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation)
+Cela permet de ne pas avoir à utiliser Postman ou un autre outil pour les appels d'API et de connaitre les différents paramètres utilisables.
+
+## IV) Explication des choix techniques
+
+### 1) Models
+
+J'ai séparé les documents en 3 modèles. DocumentFormat, DocumentType et Document. En effet, le fait qu'un document soit e-signable ou postable semble beaucoup plus dépendre du format (lettre ou contrat) que du type.
+Dans le cadre de l'API, les paramètres slug à passer sont donc ceux du type_slug liés au DocumentType.
+
+### 2) Bonus
+
+En ce qui concerne la section "Bonus", je me suis contenté de faire la partie concernant le template des types de documents. J'y ai injecté du faux HTML.
+Tous les templates se trouvent dans `resources/views/documentTypesTemplates`.
+Tu pourras voir dans les résultats de l'api un champ `template` qui contient l'url du template associé au document.
+
+### 3) Mise en cache
+
+Etant dans le cadre d'un test et dans un environnement local, je me suis contenté du driver de cache en db afin de ne pas avoir à installer Redis. Mais cela donne une bonne idée de ce que l'on pourrait faire.
+
+### 4) Packages utilisés
+- cviebrock/eloquent-sluggable : Permet de créer des slugs automatiquement pour les modèles
+- l5-swagger : Permet de créer la documentation de l'api
+- stechstudio/laravel-php-cs-fixer : Met le code en forme automatiquement selon les normes PSR, etc
